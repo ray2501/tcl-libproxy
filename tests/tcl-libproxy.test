@@ -1,0 +1,28 @@
+# tcl-libproxy.test --
+#
+#	Tests for tcl-libproxy
+#------------------------------------------------------------------------------
+
+lappend auto_path .
+if {[lsearch [namespace children] ::tcltest] == -1} {
+    package require tcltest 2
+    namespace import -force ::tcltest::*
+}
+loadTestedCommands
+package require libproxy
+
+set testdir [makeDirectory lmdbtest]
+
+#-------------------------------------------------------------------------------
+
+test libproxy-1.1 {wrong # args} {*}{
+    -body {
+        ::libproxy::proxies
+    }
+    -returnCodes error
+    -match glob
+    -result {wrong # args*}
+}
+
+cleanupTests
+return
