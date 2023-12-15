@@ -5,7 +5,7 @@
 
 Name:          tcl-libproxy
 Summary:       Tcl bindings for libproxy
-Version:       0.1
+Version:       0.2
 Release:       0
 License:       MIT
 Group:         Development/Libraries/Tcl
