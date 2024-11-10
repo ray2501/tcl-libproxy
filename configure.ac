@@ -75,7 +75,7 @@ TEA_ADD_SOURCES([tclproxy.c])
 TEA_ADD_HEADERS([])
 TEA_ADD_INCLUDES([])
 TEA_ADD_LIBS([-lproxy])
-TEA_ADD_CFLAGS([])
+TEA_ADD_CFLAGS([-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libproxy])
 TEA_ADD_STUB_SOURCES([])
 TEA_ADD_TCL_SOURCES([])
 

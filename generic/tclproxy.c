@@ -26,7 +26,7 @@ Proxy_Cmd(
     pxProxyFactory *pf = NULL;
     char **proxies = NULL;
     char *url_string = NULL;
-    int url_len = 0;
+    Tcl_Size url_len = 0;
     int index = 0;
     Tcl_Obj *pResultStr = NULL;
 
@@ -87,7 +87,7 @@ Libproxy_Init(Tcl_Interp *interp)
 {
     Tcl_Namespace *nsPtr; /* pointer to hold our own new namespace */
 
-    if (Tcl_InitStubs(interp, "8.6", 0) == NULL) {
+    if (Tcl_InitStubs(interp, TCL_VERSION, 0) == NULL) {
         return TCL_ERROR;
     }
 
@@ -98,7 +98,7 @@ Libproxy_Init(Tcl_Interp *interp)
     /*
      * Create the namespace.
      */
-    nsPtr = Tcl_CreateNamespace(interp, NS, NULL, NULL);
+    nsPtr = Tcl_CreateNamespace(interp, "::" NS, NULL, NULL);
     if (nsPtr == NULL) {
         return TCL_ERROR;
     }
